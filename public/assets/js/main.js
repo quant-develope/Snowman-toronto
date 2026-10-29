@@ -38,9 +38,12 @@
   });
 
   // After a tap on a phone number, open the "You may be interested" page once the
-  // visitor comes back from the dialer. On desktop, where tel: links usually stay
-  // on the page, move on after a moment. Phones never get a timer, so the iOS
-  // "Call?" prompt is not dismissed by navigating away under it.
+  // visitor comes back from the dialer. The call itself only ever starts from the
+  // visitor's own tap: the page never navigates while the dialer or the iOS "Call?"
+  // prompt is opening, which is what makes iOS show "site blocked automatic call
+  // initiation". Phones get no timer, and a short trip to the background (under
+  // 2 s, e.g. the prompt itself) does not count as a call. On desktop, where tel:
+  // links usually stay on the page, move on after a moment.
   var NEXT = '/you-may-be-interested/';
   var calling = false;
   if (location.pathname !== NEXT) {
@@ -48,10 +51,11 @@
       var a = e.target.closest('a[href^="tel:"]');
       if (!a || calling) return;
       calling = true;
-      var left = false;
+      var hiddenAt = 0;
       var onVis = function () {
-        if (document.hidden) { left = true; clearTimeout(timer); }
-        else if (left) go();
+        if (document.hidden) { hiddenAt = Date.now(); clearTimeout(timer); }
+        else if (hiddenAt && Date.now() - hiddenAt >= 2000) go();
+        else hiddenAt = 0;
       };
       // Runs once, so "Back" from the next page is not bounced forward again.
       var go = function () {
