@@ -35,7 +35,7 @@ const moreSection = () => `
 const stars = () => `<span class="stars" aria-label="${site.googleRating} out of 5 stars">${icon('star').repeat(5)}</span>`;
 
 const serviceOptions = [
-  'Seasonal contract (driveway)', 'One-time / after-storm clearing', 'Sidewalks, walkways & steps',
+  'Seasonal plan (driveway)', 'One-time / after-storm clearing', 'Sidewalks, walkways & steps',
   'Salting & de-icing', 'Roof snow / ice dam removal', 'Commercial lot or plaza', 'Other / not sure',
 ];
 
@@ -51,7 +51,7 @@ const leadForm = () => `
       <div class="form-grid">
         <label>Name<input name="name" autocomplete="name" required maxlength="80" placeholder="Your name"></label>
         <label>Phone<input name="phone" type="tel" autocomplete="tel" inputmode="tel" required maxlength="30" placeholder="(416) 000-0000"></label>
-        <label class="span-2"><span>Address <span class="opt">(for an exact price)</span></span><input name="address" autocomplete="street-address" maxlength="160" placeholder="123 Queen St W"></label>
+        <label class="span-2">Address<input name="address" autocomplete="street-address" maxlength="160" placeholder="123 Queen St W"></label>
         <label>City
           <select name="city" required>
             <option value="">Select city</option>
@@ -111,8 +111,8 @@ const marquee = () => `
 </section>`;
 
 const faqs = [
-  ['How much does snow removal cost in Toronto?', 'It depends on the size of the driveway, walkways and steps, and whether you want a seasonal contract or a single visit. Send the form with your address or call, and we will give you an exact price, usually the same day.'],
-  ['When do you come to plow?', `On a seasonal contract the crew comes automatically once snowfall reaches ${site.trigger}. In long storms we come back until it stops, then do a final clean-up and salt. You never need to call.`],
+  ['How much does snow removal cost in Toronto?', 'It depends on the size of the driveway, walkways and steps, and whether you want a seasonal plan or a single visit. Send the form with your address or call, and we will give you an exact price, usually the same day.'],
+  ['When do you come to plow?', `On a seasonal plan the crew comes automatically once snowfall reaches ${site.trigger}. In long storms we come back until it stops, then do a final clean-up and salt. You never need to call.`],
   ['Do you clear the windrow left by the city plow?', 'Yes. The ridge of packed snow at the end of your driveway is cleared on every visit for seasonal clients, and on request for one-time visits.'],
   ['Can I book just one visit after a big storm?', 'Yes. Call or send the form and we send a crew the same day whenever possible. Seasonal clients are served first during heavy storms, so book early.'],
   ['Do you remove snow and ice dams from roofs?', 'Yes. We rake snow off sloped roofs, hand-clear flat roofs and garages, knock down dangerous icicles and open channels through ice dams so the water can drain.'],
@@ -142,7 +142,7 @@ const home = () => {
   <div class="container hero-inner">
     <p class="eyebrow reveal">${icon('snow')} Toronto &amp; GTA · 24/7 in every storm</p>
     <h1 class="reveal">Snow tonight.<br><span class="grad-text">Clear driveway</span><br>by morning.</h1>
-    <p class="hero-sub reveal">Seasonal plowing contracts and same-day snow removal for homes and businesses. Driveways, walkways, steps, salting and roofs, done before you need to leave.</p>
+    <p class="hero-sub reveal">Seasonal plowing plans and same-day snow removal for homes and businesses. Driveways, walkways, steps, salting and roofs, done before you need to leave.</p>
     <div class="hero-ctas reveal">
       <a class="btn btn-call btn-xl" href="tel:${site.phone.tel}" data-track="phone_click">${icon('phone')}<span><span class="call-word">Call </span>${site.phone.display}</span></a>
       <a class="btn btn-glass btn-xl" href="#quote" data-track="quote_click">Get a free quote</a>
@@ -208,7 +208,7 @@ ${marquee()}
       </article>`).join('')}
     </div>
     <div class="relief reveal">
-      <p><strong>Good news:</strong> with a seasonal contract you never touch a shovel. We watch the forecast and show up on our own.</p>
+      <p><strong>Good news:</strong> with a seasonal plan you never touch a shovel. We watch the forecast and show up on our own.</p>
       <a class="btn btn-call" href="tel:${site.phone.tel}" data-track="phone_click">${icon('phone')} <span><span class="call-word">Call </span>${site.phone.display}</span></a>
     </div>
   </div>
@@ -271,7 +271,7 @@ ${moreSection()}
   return page({
     path: '/',
     title: `Snow Removal Toronto | Seasonal Plowing, Salting, Roof Snow | ${site.brand}`,
-    description: `Residential and commercial snow removal in Toronto & the GTA: seasonal plowing contracts, same-day clearing, salting, windrows and roof snow. Free quotes. Call ${site.phone.display}.`,
+    description: `Residential and commercial snow removal in Toronto & the GTA: seasonal plowing plans, same-day clearing, salting, windrows and roof snow. Free quotes. Call ${site.phone.display}.`,
     body,
     schema: [faqSchema],
   });
@@ -281,7 +281,7 @@ const guidesIndex = () =>
   page({
     path: '/guides/',
     title: `Snow Removal Guides & How-To | ${site.brand}`,
-    description: 'Practical winter advice for Toronto homeowners: snow contracts, ice dams, salt and sidewalk rules.',
+    description: 'Practical winter advice for Toronto homeowners: seasonal plans, ice dams, salt and sidewalk rules.',
     body: `
 <section class="section article-head">
   <div class="container narrow">
@@ -311,7 +311,7 @@ const guidePage = (g) =>
     ${g.body}
     <aside class="article-cta">
       <h2>Need help with the snow?</h2>
-      <p>Free quote in Toronto &amp; the GTA. Seasonal contracts and same-day clearing.</p>
+      <p>Free quote in Toronto &amp; the GTA. Seasonal plans and same-day clearing.</p>
       <div class="hero-ctas">
         <a class="btn btn-primary" href="/#quote" data-track="quote_click">Get a free quote</a>
         <a class="btn btn-outline" href="tel:${site.phone.tel}" data-track="phone_click">${icon('phone')} ${site.phone.display}</a>
