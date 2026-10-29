@@ -5,10 +5,10 @@ import { page, esc, icon } from './layout.mjs';
 const pic = (name, alt, { eager = false, cls = '' } = {}) =>
   `<picture><source type="image/webp" srcset="/assets/img/work/${name}.webp"><img class="${cls}" src="/assets/img/work/${name}.jpg" alt="${esc(alt)}" ${eager ? 'fetchpriority="high"' : 'loading="lazy"'} decoding="async"></picture>`;
 
-const moreSection = () => `
+const moreSection = ({ kicker = true } = {}) => `
 <section id="more" class="section more-section" aria-labelledby="more-title">
   <div class="container">
-    <p class="kicker center reveal">You may be interested</p>
+    ${kicker ? '<p class="kicker center reveal">You may be interested</p>' : ''}
     <div class="more-grid">
       <a class="more-card reveal" href="${site.lightsUrl}" target="_blank" rel="noopener" data-track="lights_click">
         <div class="more-photo">${pic('lights-holiday-mix', 'House outlined with permanent multicolour holiday lights')}</div>
@@ -310,11 +310,40 @@ const thankYou = () =>
     <h1>Thank you! Your request is in.</h1>
     <p>We will call you back shortly. Need us sooner?</p>
     <a class="btn btn-primary btn-lg" href="tel:${site.phone.tel}" data-track="phone_click">${icon('phone')} <span><span class="call-word">Call </span>${site.phone.display}</span></a>
-    <p class="muted">While you wait: <a href="/guides/">read our winter guides</a>.</p>
+    <p class="muted">Meanwhile, <a href="#more">check out our partners</a>.</p>
   </div>
 </section>
 ${moreSection()}
 <script>window.dataLayer=window.dataLayer||[];window.dataLayer.push({event:'generate_lead'});</script>`,
+  });
+
+// Shown after a visitor taps a phone number (see main.js).
+const interested = () =>
+  page({
+    path: '/you-may-be-interested/',
+    title: `You may be interested | ${site.brand}`,
+    description: 'Other home services from our partners in Toronto & the GTA.',
+    noindex: true,
+    body: `
+<section class="section thanks interested-top">
+  <div class="container narrow center">
+    <span class="thanks-icon">${icon('phone')}</span>
+    <p class="kicker">Thanks for calling ${esc(site.brand)}</p>
+    <h1>You may be interested</h1>
+    <p>While we take care of the snow, here is what our partners do for Toronto homes.</p>
+  </div>
+</section>
+${moreSection({ kicker: false })}
+<section class="section interested-call">
+  <div class="container narrow center">
+    <h2>Call didn't go through?</h2>
+    <p>We pick up any time. Or leave a request and we will call you back.</p>
+    <div class="interested-ctas">
+      <a class="btn btn-primary btn-lg" href="tel:${site.phone.tel}" data-track="phone_click">${icon('phone')} <span><span class="call-word">Call </span>${site.phone.display}</span></a>
+      <a class="btn btn-outline btn-lg" href="/#quote" data-track="quote_click">Get a free quote</a>
+    </div>
+  </div>
+</section>`,
   });
 
 const privacy = () =>
@@ -395,6 +424,7 @@ export const pages = () => [
   ['guides/index.html', guidesIndex()],
   ...guides.map((g) => [`guides/${g.slug}/index.html`, guidePage(g)]),
   ['thank-you/index.html', thankYou()],
+  ['you-may-be-interested/index.html', interested()],
   ['privacy/index.html', privacy()],
   ['lights/index.html', lightsPage()],
   ['404.html', notFound()],

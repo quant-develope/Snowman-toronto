@@ -37,6 +37,34 @@
     if (el) dl.push({ event: el.getAttribute('data-track'), link_location: el.className || 'link' });
   });
 
+  // After a tap on a phone number, open the "You may be interested" page once the
+  // visitor comes back from the dialer. On desktop, where tel: links usually stay
+  // on the page, move on after a moment. Phones never get a timer, so the iOS
+  // "Call?" prompt is not dismissed by navigating away under it.
+  var NEXT = '/you-may-be-interested/';
+  var calling = false;
+  if (location.pathname !== NEXT) {
+    document.addEventListener('click', function (e) {
+      var a = e.target.closest('a[href^="tel:"]');
+      if (!a || calling) return;
+      calling = true;
+      var left = false;
+      var onVis = function () {
+        if (document.hidden) { left = true; clearTimeout(timer); }
+        else if (left) go();
+      };
+      // Runs once, so "Back" from the next page is not bounced forward again.
+      var go = function () {
+        clearTimeout(timer);
+        document.removeEventListener('visibilitychange', onVis);
+        calling = false;
+        location.href = NEXT;
+      };
+      var timer = window.matchMedia('(pointer: fine)').matches ? setTimeout(go, 1500) : 0;
+      document.addEventListener('visibilitychange', onVis);
+    });
+  }
+
   // Bottom bar: hidden while the hero or final "Get a free quote" button is on screen,
   // slides up once the visitor has scrolled past the hero button
   var bar = document.querySelector('.sticky-cta');
