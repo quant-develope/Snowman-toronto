@@ -523,3 +523,9 @@ body.menu-open { overflow: hidden; }
 @media (max-width: 599px) { .work-item figcaption { font-size: .7rem; padding: 4px 9px; left: 6px; bottom: 6px; } }
 @media (min-width: 900px) { .work-grid { grid-template-columns: repeat(3, 1fr); gap: 18px; } .work-item img { aspect-ratio: 4 / 5; } }
 .trust-main strong { white-space: nowrap; font-size: 3rem; }
+
+/* "You may be interested" page after a call tap */
+.interested-top { padding-bottom: 0; }
+.interested-top .kicker { margin-bottom: 6px; }
+.interested-call { padding-top: 0; }
+.interested-ctas { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; }
