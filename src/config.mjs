@@ -15,9 +15,9 @@ export const site = {
   years: 8,
   googleRating: '4.9',
   area: 'Toronto & the GTA',
-  // Plowing starts once this much snow has fallen (seasonal contracts).
+  // Plowing starts once this much snow has fallen (seasonal plans).
   trigger: '5 cm',
-  // Season covered by contracts.
+  // Season covered by seasonal plans.
   season: 'November 15 – April 15',
   googleReviewsUrl: 'https://maps.app.goo.gl/2quwHpzievybGyoS7',
   // Google Tag Manager container ID, e.g. 'GTM-XXXXXXX'. Empty = no GTM.
@@ -33,14 +33,14 @@ export const site = {
 export const services = [
   {
     id: 'seasonal',
-    title: 'Seasonal Snow Removal Contracts',
+    title: 'Seasonal Snow Removal',
     text: `One fixed price for the whole winter (${site.season}). We plow your driveway every time snowfall reaches ${site.trigger}, no calls needed.`,
     icon: 'snow',
   },
   {
     id: 'one-time',
     title: 'One-Time & On-Call Clearing',
-    text: 'No contract? Call after a storm and we send a crew the same day to clear the driveway, walkways and steps.',
+    text: 'Just one storm? Call after a storm and we send a crew the same day to clear the driveway, walkways and steps.',
     icon: 'truck',
   },
   {
@@ -92,7 +92,7 @@ export const cities = [
 export const plans = [
   {
     name: 'Per visit',
-    tag: 'No contract',
+    tag: 'Pay as you go',
     text: 'Pay only for the storms you call us for.',
     items: ['Driveway and walkway cleared', 'Same-day crew after you call', 'Salting on request', 'Pay after the job is done'],
   },

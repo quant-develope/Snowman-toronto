@@ -3,13 +3,13 @@ import { site } from './config.mjs';
 
 export const guides = [
   {
-    slug: 'seasonal-contract-vs-per-visit',
-    short: 'Seasonal contract or per visit?',
-    title: 'Seasonal Snow Removal Contract vs. Per-Visit: Which Is Cheaper in Toronto?',
-    description: 'How seasonal snow plowing contracts work in Toronto and the GTA, and when paying per visit makes more sense.',
+    slug: 'seasonal-plan-vs-per-visit',
+    short: 'Seasonal plan or per visit?',
+    title: 'Seasonal Snow Removal Plan vs. Per-Visit: Which Is Cheaper in Toronto?',
+    description: 'How seasonal snow plowing plans work in Toronto and the GTA, and when paying per visit makes more sense.',
     body: `
-<p>Toronto gets around <strong>120 cm of snow in an average winter</strong>, spread over a few dozen snowfalls. Some winters bring a handful of big storms, others a steady stream of small ones. How you pay for snow removal decides who carries that risk: you or the contractor.</p>
-<h2>How a seasonal contract works</h2>
+<p>Toronto gets around <strong>120 cm of snow in an average winter</strong>, spread over a few dozen snowfalls. Some winters bring a handful of big storms, others a steady stream of small ones. How you pay for snow removal decides who carries that risk: you or the snow removal company.</p>
+<h2>How a seasonal plan works</h2>
 <ul>
   <li>One fixed price for the season (ours runs ${site.season}), usually paid in one or two instalments.</li>
   <li>The crew comes automatically every time snowfall reaches the <strong>trigger depth</strong> (${site.trigger} for most of our clients). You never have to call.</li>
@@ -23,8 +23,8 @@ export const guides = [
   <li>The property is small, for example a short single-car driveway.</li>
 </ul>
 <h2>The quick rule</h2>
-<p>If you would call a crew more than six or seven times in a typical winter, a seasonal contract is almost always cheaper, and you get priority on the route. If you only want help with the biggest storms, pay per visit.</p>
-<h2>What to ask any contractor</h2>
+<p>If you would call a crew more than six or seven times in a typical winter, a seasonal plan is almost always cheaper, and you get priority on the route. If you only want help with the biggest storms, pay per visit.</p>
+<h2>What to ask any snow removal company</h2>
 <ol>
   <li>What is the trigger depth, and do you come back if it keeps snowing?</li>
   <li>Is the city windrow at the end of the driveway included?</li>
@@ -126,6 +126,6 @@ export const guides = [
 <h2>Check your city</h2>
 <p>Mississauga, Brampton, Vaughan, Markham, Richmond Hill, Oakville and Durham Region each have their own bylaw on sidewalk clearing, deadlines and fines. Search for "sidewalk snow clearing bylaw" on your city's website, or ask us: we know the rules on our routes.</p>
 <h2>Liability</h2>
-<p>If someone slips on an uncleared or icy walkway on your property, you may be responsible. Regular clearing and salting, plus a contractor who logs each visit, is the best protection. For commercial clients we keep time-stamped photos of every visit.</p>`,
+<p>If someone slips on an uncleared or icy walkway on your property, you may be responsible. Regular clearing and salting, plus a crew that logs each visit, is the best protection. For commercial clients we keep time-stamped photos of every visit.</p>`,
   },
 ];
