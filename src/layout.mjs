@@ -74,8 +74,11 @@ const header = () => `
       <ul>
         <li><a href="/#work">Our work</a></li>
         <li><a href="/#faq">FAQ</a></li>
-        <li><a href="${site.guttersUrl}" target="_blank" rel="noopener">Gutter cleaning ↗</a></li>
-        <li><a href="${site.lightsUrl}" target="_blank" rel="noopener">Permanent holiday lights ↗</a></li>
+      </ul>
+      <p class="menu-heading">Our partners</p>
+      <ul>
+        <li><a href="${site.lightsUrl}" target="_blank" rel="noopener" data-track="lights_click">Permanent holiday lights ↗</a></li>
+        <li><a href="${site.guttersUrl}" target="_blank" rel="noopener" data-track="gutters_click">Gutter cleaning ↗</a></li>
       </ul>
       <a class="btn btn-primary btn-block" href="/#quote" data-track="quote_click">Get a free quote</a>
       ${telLink('btn btn-outline btn-block', `${icon('phone')} ${site.phone.display}`)}
