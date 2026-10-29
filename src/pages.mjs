@@ -135,7 +135,7 @@ const snowfall = () => `<div class="snow" aria-hidden="true">${'<i></i>'.repeat(
 const home = () => {
   const body = `
 <section class="hero">
-  <div class="hero-bg"><img src="/assets/img/hero-snow.svg" alt="" fetchpriority="high"></div>
+  <div class="hero-bg"><picture><source srcset="/assets/img/hero.webp" type="image/webp"><img src="/assets/img/hero.jpg" alt="Crew shovelling snow off a Toronto sidewalk during a snowfall" width="1024" height="576" fetchpriority="high"></picture></div>
   ${snowfall()}
   <div class="container hero-inner">
     <p class="eyebrow reveal">${icon('snow')} Toronto &amp; GTA · same-day snow removal</p>
