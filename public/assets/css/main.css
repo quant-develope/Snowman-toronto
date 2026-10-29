@@ -82,7 +82,10 @@ p { margin: 0 0 1em; }
 .site-header { position: sticky; top: 0; z-index: 70; background: rgba(255,255,255,.82); backdrop-filter: saturate(1.6) blur(14px); -webkit-backdrop-filter: saturate(1.6) blur(14px); border-bottom: 1px solid rgba(10, 95, 134, .08); }
 .header-inner { display: flex; align-items: center; gap: 12px; height: 66px; }
 .logo { display: flex; align-items: center; gap: 10px; color: var(--ocean); text-decoration: none; font-weight: 800; font-size: 1.2rem; letter-spacing: -.02em; margin-right: auto; }
-.logo-mark { width: 38px; height: 38px; }
+.logo-mark { width: 56px; height: 42px; flex: none; }
+.logo-text { display: flex; flex-direction: column; line-height: 1; }
+.logo-name { background: linear-gradient(90deg, #0b2140, #1d5fa0 60%, #2fa8d8); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.logo-sub { margin-top: 4px; font-size: .62rem; font-weight: 700; letter-spacing: .22em; text-transform: uppercase; color: #2fa8d8; }
 .header-phone { display: flex; align-items: center; gap: 8px; color: var(--ocean); font-weight: 800; text-decoration: none; white-space: nowrap; padding: 8px 14px; border-radius: 999px; background: var(--foam); }
 .header-phone .icon { color: var(--sea); }
 .menu-toggle, .menu-close { background: none; border: 0; color: var(--ocean); padding: 8px; cursor: pointer; display: grid; place-items: center; border-radius: 12px; }
