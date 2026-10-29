@@ -20,7 +20,7 @@ export const services = [
   {
     id: 'driveways',
     title: 'Driveway Snow Clearing',
-    text: 'Call after a snowfall and we send a crew to clear your driveway down to the pavement, from single-car pads to long shared laneways.',
+    text: 'Call us anytime and we send a crew to clear your driveway down to the pavement, from single-car pads to long shared laneways.',
     icon: 'truck',
   },
   {
