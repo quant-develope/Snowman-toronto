@@ -13,7 +13,7 @@ const moreSection = () => `
       <a class="more-card reveal" href="${site.lightsUrl}" target="_blank" rel="noopener" data-track="lights_click">
         <div class="more-photo">${pic('lights-holiday-mix', 'House outlined with permanent multicolour holiday lights')}</div>
         <div class="more-copy">
-          <span class="more-brand">Holiday lights · Toronto</span>
+          <span class="more-brand">Our partners · Holiday lights</span>
           <h2 id="more-title">Permanent holiday lights, <span class="lights-text">no ladders ever again</span></h2>
           <p>Slim LED tracks hidden under your roofline. Christmas, Halloween or warm white every night, all from your phone.</p>
           <span class="btn btn-lights">See permanent lights <span aria-hidden="true">→</span></span>
@@ -22,7 +22,7 @@ const moreSection = () => `
       <a class="more-card more-gutters reveal" href="${site.guttersUrl}" target="_blank" rel="noopener" data-track="gutters_click">
         <div class="more-photo">${pic('winter-icicles', 'Icicles hanging from a clogged gutter under heavy snow')}</div>
         <div class="more-copy">
-          <span class="more-brand">Gutter cleaning · Toronto</span>
+          <span class="more-brand">Our partners · Gutter cleaning</span>
           <h2>Icicles on the gutters? <span class="grad-text">That's a clog.</span></h2>
           <p>Gutter cleaning, repair and LeafGuard installation so meltwater drains away instead of freezing into ice dams.</p>
           <span class="btn btn-ice">See gutter cleaning <span aria-hidden="true">→</span></span>
