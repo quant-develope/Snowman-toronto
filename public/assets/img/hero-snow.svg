@@ -1,0 +1,113 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#06142b"/>
+      <stop offset=".55" stop-color="#14365e"/>
+      <stop offset="1" stop-color="#3f6f9c"/>
+    </linearGradient>
+    <radialGradient id="moon" cx=".5" cy=".5" r=".5">
+      <stop offset="0" stop-color="#fffbe8"/>
+      <stop offset=".6" stop-color="#fdf3c7" stop-opacity=".9"/>
+      <stop offset="1" stop-color="#fdf3c7" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="ground" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#e9f4fb"/>
+      <stop offset="1" stop-color="#b9d3e6"/>
+    </linearGradient>
+    <linearGradient id="drive" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#5b6b7c"/>
+      <stop offset="1" stop-color="#3a4756"/>
+    </linearGradient>
+    <radialGradient id="glow" cx=".5" cy=".5" r=".5">
+      <stop offset="0" stop-color="#ffc861" stop-opacity=".55"/>
+      <stop offset="1" stop-color="#ffc861" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="beam" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#fff6c8" stop-opacity=".55"/>
+      <stop offset="1" stop-color="#fff6c8" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="1000" fill="url(#sky)"/>
+  <!-- stars -->
+  <g fill="#fff" opacity=".7">
+    <circle cx="120" cy="80" r="1.6"/><circle cx="300" cy="150" r="1.2"/><circle cx="460" cy="60" r="1.4"/><circle cx="620" cy="130" r="1"/>
+    <circle cx="820" cy="70" r="1.5"/><circle cx="980" cy="160" r="1.1"/><circle cx="1500" cy="90" r="1.3"/><circle cx="1380" cy="190" r="1"/>
+    <circle cx="700" cy="230" r="1.2"/><circle cx="220" cy="260" r="1"/><circle cx="1060" cy="40" r="1.2"/>
+  </g>
+  <!-- moon -->
+  <circle cx="1280" cy="170" r="150" fill="url(#moon)" opacity=".35"/>
+  <circle cx="1280" cy="170" r="58" fill="#fffbe8"/>
+  <!-- distant skyline with CN Tower -->
+  <g fill="#0f2747" opacity=".9">
+    <path d="M0 610V520h60v-40h50v60h40v-90h70v110h30v-70h60v110h40V470h50v60h30v-30h60v110h30v-160h60v170h40v-120h50v70h30V610z"/>
+    <path d="M960 610V500h40v-70h60v80h40v-130h70v150h30v-60h50v140h40v-90h60v60h40V430h70v120h40v-60h60v120h40V610z"/>
+    <path d="M884 610V330h-8l2-30h-10l6-30 6-4V150h6l2-30 2 30h6v116l6 4 6 30h-10l2 30h-8v280z"/>
+  </g>
+  <g fill="#ffd27a" opacity=".55">
+    <rect x="128" y="560" width="6" height="6"/><rect x="250" y="540" width="6" height="6"/><rect x="420" y="520" width="6" height="6"/>
+    <rect x="1110" y="470" width="6" height="6"/><rect x="1180" y="540" width="6" height="6"/><rect x="1400" y="500" width="6" height="6"/>
+    <rect x="560" y="580" width="6" height="6"/><rect x="1250" y="580" width="6" height="6"/>
+  </g>
+  <!-- snowy hills -->
+  <path d="M0 640c200-50 400-40 600-10s420 40 620 0 300-40 380-30V1000H0z" fill="#cfe2f0"/>
+  <!-- left house -->
+  <g>
+    <rect x="130" y="560" width="300" height="190" fill="#7b4b3a"/>
+    <path d="M110 570 280 450l170 120z" fill="#3a2a2a"/>
+    <path d="M104 574c10-14 28-18 40-28L280 444l136 102c12 10 32 14 40 28-30 6-60-4-82-12-24 10-44 6-60-2-20 10-48 10-66 0-22 10-50 8-68-2-22 8-50 12-76 16z" fill="#f4faff"/>
+    <rect x="170" y="610" width="60" height="60" fill="#ffcf73"/><rect x="330" y="610" width="60" height="60" fill="#ffcf73"/>
+    <path d="M170 640h60M200 610v60M330 640h60M360 610v60" stroke="#7b4b3a" stroke-width="5"/>
+    <rect x="250" y="660" width="50" height="90" fill="#2d1d18"/>
+    <circle cx="200" cy="640" r="70" fill="url(#glow)"/><circle cx="360" cy="640" r="70" fill="url(#glow)"/>
+    <path d="M160 606h80v8h-80zM320 606h80v8h-80z" fill="#f4faff"/>
+  </g>
+  <!-- right house -->
+  <g>
+    <rect x="1120" y="520" width="360" height="230" fill="#41546b"/>
+    <path d="M1096 532 1300 400l204 132z" fill="#22303f"/>
+    <path d="M1090 536c14-16 34-20 48-32L1300 394l166 110c14 10 34 14 44 32-34 6-70-4-96-12-28 10-54 6-72-2-24 10-56 10-78 0-26 10-60 8-80-2-26 8-60 12-90 16z" fill="#f4faff"/>
+    <rect x="1160" y="580" width="70" height="70" fill="#ffcf73"/><rect x="1370" y="580" width="70" height="70" fill="#ffcf73"/>
+    <path d="M1160 615h70M1195 580v70M1370 615h70M1405 580v70" stroke="#41546b" stroke-width="5"/>
+    <circle cx="1195" cy="615" r="80" fill="url(#glow)"/><circle cx="1405" cy="615" r="80" fill="url(#glow)"/>
+    <rect x="1255" y="640" width="90" height="110" fill="#2b3746"/>
+    <path d="M1150 576h90v8h-90zM1360 576h90v8h-90z" fill="#f4faff"/>
+    <!-- icicles -->
+    <path d="M1110 540l6 22 6-22zM1140 540l5 16 5-16zM1460 540l6 24 6-24zM1430 540l4 14 4-14z" fill="#d6ecff"/>
+  </g>
+  <!-- foreground snow, cleared driveway and walkway -->
+  <path d="M0 740h1600v260H0z" fill="url(#ground)"/>
+  <path d="M1250 750h100l170 250h-420z" fill="url(#drive)"/>
+  <path d="M270 750h30l-40 250h-60z" fill="url(#drive)" opacity=".85"/>
+  <!-- snowbanks along the driveway -->
+  <path d="M1180 760c20-20 50-16 64-4l-40 244h-120c10-60 40-120 70-180-12-20 4-46 26-60z" fill="#f7fbff"/>
+  <path d="M1360 760c30-10 60 10 70 30 40 70 90 140 130 210h-80z" fill="#f7fbff"/>
+  <!-- driveway markers -->
+  <g fill="#ff7a3d"><rect x="1236" y="700" width="5" height="70"/><rect x="1356" y="700" width="5" height="70"/><rect x="1180" y="820" width="7" height="110"/><rect x="1440" y="820" width="7" height="110"/></g>
+  <!-- plow truck -->
+  <g transform="translate(560 770)">
+    <path d="M-260 70c120-40 220-30 240 0z" fill="url(#beam)" transform="scale(-1 1) translate(-40 0)"/>
+    <rect x="40" y="30" width="230" height="90" rx="10" fill="#e8662f"/>
+    <path d="M60 30l30-60h120l40 60z" fill="#d4572a"/>
+    <path d="M100 25l20-42h80l26 42z" fill="#9fd3ff" opacity=".85"/>
+    <rect x="110" y="-40" width="60" height="12" rx="4" fill="#ffc400"/>
+    <rect x="-40" y="60" width="90" height="70" rx="8" fill="#ffc400"/>
+    <path d="M-40 60c-20 20-24 50-10 70h20c-10-20-10-48 10-70z" fill="#e0ac00"/>
+    <circle cx="90" cy="125" r="30" fill="#1b2430"/><circle cx="90" cy="125" r="12" fill="#6f7b88"/>
+    <circle cx="225" cy="125" r="30" fill="#1b2430"/><circle cx="225" cy="125" r="12" fill="#6f7b88"/>
+    <rect x="260" y="60" width="14" height="18" rx="3" fill="#ffefb0"/>
+    <path d="M-80 140c40-24 90-30 130-16" stroke="#fff" stroke-width="14" stroke-linecap="round" fill="none" opacity=".9"/>
+  </g>
+  <!-- snowman -->
+  <g transform="translate(820 820)">
+    <ellipse cx="0" cy="110" rx="70" ry="14" fill="#a9c4da" opacity=".6"/>
+    <circle cx="0" cy="60" r="56" fill="#fff"/>
+    <circle cx="0" cy="-20" r="40" fill="#fff"/>
+    <circle cx="0" cy="-82" r="28" fill="#fff"/>
+    <rect x="-24" y="-130" width="48" height="30" rx="4" fill="#0b2140"/><rect x="-34" y="-104" width="68" height="8" rx="3" fill="#0b2140"/>
+    <path d="M0 -80l30 8-30 6z" fill="#ff7a3d"/>
+    <circle cx="-10" cy="-90" r="3.5" fill="#0b2140"/><circle cx="10" cy="-90" r="3.5" fill="#0b2140"/>
+    <path d="M-30 -56c20 12 40 12 60 0l4 12c-10 6-14 16-10 34h-12c-2-14 0-22 6-28-20 4-34 2-48-6z" fill="#e8662f"/>
+    <circle cx="0" cy="-30" r="4" fill="#0b2140"/><circle cx="0" cy="-10" r="4" fill="#0b2140"/>
+    <path d="M38 -24l50-36M-38 -24l-46-30" stroke="#5a3a28" stroke-width="5" stroke-linecap="round"/>
+  </g>
+</svg>
