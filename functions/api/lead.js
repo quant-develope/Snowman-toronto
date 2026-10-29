@@ -39,12 +39,14 @@ export async function onRequestPost({ request, env }) {
 
   lead.received = new Date().toISOString();
   lead.ip_country = request.cf?.country || '';
+  // Domain the form was sent from, so leads from several sites can be told apart.
+  lead.site = new URL(request.url).hostname;
 
   const jobs = [];
   if (env.TELEGRAM_BOT_TOKEN && env.TELEGRAM_CHAT_ID) jobs.push(sendTelegram(env, lead));
   if (env.RESEND_API_KEY && env.LEAD_EMAIL_TO) jobs.push(sendEmail(env, lead));
   if (env.LEAD_WEBHOOK_URL) jobs.push(sendWebhook(env, lead));
-  if (env.CRM) jobs.push(sendCrm(env, lead, request));
+  if (env.CRM) jobs.push(sendCrm(env, lead));
   if (!jobs.length) {
     console.error('lead delivery failed: no delivery channel configured');
     return reply(false, 500, 'no delivery channel configured');
@@ -60,6 +62,7 @@ export async function onRequestPost({ request, env }) {
 function summary(lead) {
   const source = [lead.utm_source, lead.utm_medium, lead.utm_campaign, lead.utm_term].filter(Boolean).join(' / ');
   return [
+    `Site: ${lead.site}`,
     `Name: ${lead.name}`,
     `Phone: ${lead.phone}`,
     lead.email && `Email: ${lead.email}`,
@@ -113,6 +116,6 @@ async function sendWebhook(env, lead) {
 
 // Toronto CRM: the lead appears in «Звонки» as «Заявка с сайта», with a button to create an order.
 // Called through a Cloudflare service binding (Worker-to-Worker RPC), so no public endpoint or secret is needed.
-async function sendCrm(env, lead, request) {
-  await env.CRM.siteLead({ ...lead, site: new URL(request.url).host, site_phone: site.phone.tel });
+async function sendCrm(env, lead) {
+  await env.CRM.siteLead({ ...lead, site_phone: site.phone.tel });
 }
