@@ -3,9 +3,9 @@ export const site = {
   brand: 'Snowman Toronto',
   // Production URL, used for canonical links, sitemap and structured data.
   url: 'https://snowman-toronto.unknwn-creation.workers.dev',
-  phone: { display: '(825) 462-1811', tel: '+18254621811' },
+  phone: { display: '(437) 535-2069', tel: '+14375352069' },
   // WhatsApp chat for the green floating button (international format, digits only).
-  whatsapp: '18254621811',
+  whatsapp: '14375352069',
   // Sister sites promoted in "You may be interested" and the garland button.
   lightsUrl: 'https://lights-toronto.unknwn-creation.workers.dev/',
   guttersUrl: 'https://gutters-toronto.unknwn-creation.workers.dev/',
