@@ -72,8 +72,7 @@ const header = () => `
       </ul>
       <p class="menu-heading">Company</p>
       <ul>
-        <li><a href="/#plans">Plans</a></li>
-        <li><a href="/#reviews">Reviews</a></li>
+        <li><a href="/#work">Our work</a></li>
         <li><a href="/#faq">FAQ</a></li>
         <li><a href="${site.guttersUrl}" target="_blank" rel="noopener">Gutter cleaning ↗</a></li>
         <li><a href="${site.lightsUrl}" target="_blank" rel="noopener">Permanent holiday lights ↗</a></li>
@@ -89,11 +88,11 @@ const footer = () => `
   <div class="container footer-grid">
     <div>
       <p class="footer-brand">${esc(site.brand)}</p>
-      <p>Residential and commercial snow removal, salting and roof snow clearing across ${esc(site.area)}. A service of ${esc(site.company)}, ${site.years}+ years in the GTA.</p>
+      <p>Residential and commercial snow removal, salting and roof snow clearing across ${esc(site.area)}.</p>
     </div>
     <div>
       <p class="footer-heading">Contact</p>
-      <p>${telLink('', site.phone.display)}<br><a href="mailto:${site.email}">${site.email}</a><br>${esc(site.hours)}</p>
+      <p>${telLink('', site.phone.display)}<br><a href="https://wa.me/${site.whatsapp}" target="_blank" rel="noopener">WhatsApp</a><br>${esc(site.hours)}</p>
     </div>
     <div>
       <p class="footer-heading">Guides</p>
@@ -101,7 +100,7 @@ const footer = () => `
     </div>
   </div>
   <div class="container footer-bottom">
-    <span>© ${new Date().getFullYear()} ${esc(site.company)}</span>
+    <span>© ${new Date().getFullYear()} ${esc(site.brand)}</span>
     <a href="/privacy/">Privacy policy</a>
   </div>
 </footer>
@@ -115,15 +114,11 @@ const footer = () => `
 const orgSchema = () => ({
   '@context': 'https://schema.org',
   '@type': 'HomeAndConstructionBusiness',
-  description: 'Snow removal, plowing, salting and roof snow removal in Toronto & the GTA',
+  description: 'Snow removal, salting and roof snow removal in Toronto & the GTA',
   name: site.brand,
-  parentOrganization: { '@type': 'Organization', name: site.company },
   url: site.url,
   telephone: site.phone.tel,
-  email: site.email,
   areaServed: { '@type': 'City', name: 'Toronto' },
-  openingHours: 'Mo-Su 00:00-23:59',
-  sameAs: Object.values(site.social),
 });
 
 export function page({ path, title, description, body, schema = [], noindex = false }) {

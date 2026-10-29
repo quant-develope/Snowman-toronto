@@ -378,7 +378,7 @@ body.menu-open { overflow: hidden; }
 .bar-auto .sticky-cta:not(.show) { translate: 0 calc(100% + 40px); opacity: 0; pointer-events: none; }
 .bar-auto .sticky-cta:not(.show) ~ .fab-call { bottom: calc(16px + env(safe-area-inset-bottom)); }
 
-/* "You may be interested": sister site UCO Lights */
+/* "You may be interested": sister sites */
 .more-section { padding-top: 40px; }
 .more-card { display: grid; overflow: hidden; border-radius: var(--r-lg); background: #0b1630; color: #dfe6ff; text-decoration: none; box-shadow: var(--shadow); transition: transform .25s, box-shadow .25s; }
 .more-card:hover { transform: translateY(-4px); }
@@ -506,3 +506,13 @@ body.menu-open { overflow: hidden; }
 .btn-ice { background: linear-gradient(135deg, #9fe3ff, #4cc9f0); color: #06142b; box-shadow: 0 12px 30px -10px rgba(76,201,240,.7); }
 @media (min-width: 1000px) { .more-grid { grid-template-columns: 1fr 1fr; } .more-grid .more-card { grid-template-columns: 1fr; } .more-grid .more-photo img { aspect-ratio: 16 / 9; } }
 @media (min-width: 1100px) { .services .services-grid { grid-template-columns: repeat(4, 1fr); } }
+
+/* Our work: photos from real jobs */
+.work-grid { display: grid; gap: 14px; grid-template-columns: repeat(2, 1fr); }
+.work-item { position: relative; margin: 0; overflow: hidden; border-radius: var(--r-md); box-shadow: var(--shadow-sm); background: var(--ocean); }
+.work-item img { width: 100%; aspect-ratio: 3 / 4; object-fit: cover; transition: transform .6s; }
+.work-item:hover img { transform: scale(1.04); }
+.work-item figcaption { position: absolute; left: 10px; right: 10px; bottom: 10px; width: fit-content; background: rgba(6,20,43,.78); backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); color: #fff; font-size: .82rem; font-weight: 700; padding: 6px 12px; border-radius: 999px; }
+@media (max-width: 599px) { .work-item figcaption { font-size: .7rem; padding: 4px 9px; left: 6px; bottom: 6px; } }
+@media (min-width: 900px) { .work-grid { grid-template-columns: repeat(3, 1fr); gap: 18px; } .work-item img { aspect-ratio: 4 / 5; } }
+.trust-main strong { white-space: nowrap; font-size: 3rem; }
