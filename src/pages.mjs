@@ -110,7 +110,7 @@ const marquee = () => `
 
 const faqs = [
   ['How much does snow removal cost in Toronto?', 'It depends on how much snow there is and what needs clearing: driveway, walkways, steps or roof. Send the form with your address or call, and we will give you a price before we start.'],
-  ['How fast can you come?', 'Usually the same day you call. During a big storm everyone calls at once, so the sooner you reach us, the sooner we can fit you in.'],
+  ['How fast can you come?', 'Usually within an hour of your call. During a big storm everyone calls at once, so the sooner you reach us, the sooner we can fit you in.'],
   ['Do you clear the windrow left by the city plow?', 'Yes. The ridge of heavy, packed snow at the end of your driveway can be cleared on the same visit, just mention it when you call.'],
   ['Do you clear flat roofs, decks and balconies?', 'Yes. We shovel snow off flat roofs, garage roofs, rooftop decks and balconies by hand, leaving a thin layer so the membrane is not damaged.'],
   ['Do you remove ice dams and icicles?', 'Yes. We rake snow off sloped roofs, knock down dangerous icicles and open channels through ice dams so the water can drain.'],
@@ -140,14 +140,15 @@ const home = () => {
   <div class="container hero-inner">
     <p class="eyebrow reveal">${icon('snow')} Toronto &amp; GTA · same-day snow removal</p>
     <h1 class="reveal">Snowed in?<br><span class="grad-text">We'll dig</span><br>you out.</h1>
-    <p class="hero-sub reveal">Call or message us after a snowfall and we send a crew the same day. Driveways, walkways, steps, flat roofs, salting and ice removal for homes and businesses.</p>
+    <p class="hero-lead reveal">Call or message us whenever you need, and our crew will be there within an hour.</p>
+    <p class="hero-sub reveal">Driveways, walkways, steps, flat roofs, salting and ice removal for homes and businesses.</p>
     <div class="hero-ctas reveal">
       <a class="btn btn-call btn-xl" href="tel:${site.phone.tel}" data-track="phone_click">${icon('phone')}<span><span class="call-word">Call </span>${site.phone.display}</span></a>
       <a class="btn btn-glass btn-xl" href="#quote" data-track="quote_click">Get a free quote</a>
     </div>
     <ul class="hero-trust reveal">
       <li>${icon('shield')} Fully insured</li>
-      <li>${icon('truck')} Same-day crews</li>
+      <li>${icon('truck')} Crew within an hour</li>
       <li>${icon('clock')} Free estimates</li>
     </ul>
   </div>
@@ -209,7 +210,7 @@ ${marquee()}
     <ol class="steps">
       <li class="reveal"><span class="step-icon">${icon('phone')}</span><strong>Call or send the form</strong><span>Tell us your address and what needs clearing. A photo helps.</span></li>
       <li class="reveal"><span class="step-icon">${icon('check')}</span><strong>Get a price</strong><span>A clear price before we start, no surprises.</span></li>
-      <li class="reveal"><span class="step-icon">${icon('truck')}</span><strong>We come out</strong><span>Usually the same day: shovelled, scraped and salted.</span></li>
+      <li class="reveal"><span class="step-icon">${icon('truck')}</span><strong>We come out</strong><span>Usually within an hour: shovelled, scraped and salted.</span></li>
       <li class="reveal"><span class="step-icon">${icon('camera')}</span><strong>See the result</strong><span>Photos when we are done. Pay when you are happy.</span></li>
     </ol>
   </div>
@@ -285,7 +286,7 @@ const guidePage = (g) =>
     ${g.body}
     <aside class="article-cta">
       <h2>Need help with the snow?</h2>
-      <p>Free quote in Toronto &amp; the GTA. Same-day clearing after you call.</p>
+      <p>Free quote in Toronto &amp; the GTA. A crew within an hour of your call.</p>
       <div class="hero-ctas">
         <a class="btn btn-primary" href="/#quote" data-track="quote_click">Get a free quote</a>
         <a class="btn btn-outline" href="tel:${site.phone.tel}" data-track="phone_click">${icon('phone')} ${site.phone.display}</a>
