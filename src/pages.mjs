@@ -1,4 +1,4 @@
-import { site, services, cities, partners, reviews, plans } from './config.mjs';
+import { site, services, cities, partners, gallery } from './config.mjs';
 import { guides } from './guides.mjs';
 import { page, esc, icon } from './layout.mjs';
 
@@ -13,30 +13,28 @@ const moreSection = () => `
       <a class="more-card reveal" href="${site.lightsUrl}" target="_blank" rel="noopener" data-track="lights_click">
         <div class="more-photo">${pic('lights-holiday-mix', 'House outlined with permanent multicolour holiday lights')}</div>
         <div class="more-copy">
-          <span class="more-brand">UCO Lights · same team</span>
+          <span class="more-brand">Holiday lights · Toronto</span>
           <h2 id="more-title">Permanent holiday lights, <span class="lights-text">no ladders ever again</span></h2>
           <p>Slim LED tracks hidden under your roofline. Christmas, Halloween or warm white every night, all from your phone.</p>
-          <span class="btn btn-lights">See UCO Lights <span aria-hidden="true">→</span></span>
+          <span class="btn btn-lights">See permanent lights <span aria-hidden="true">→</span></span>
         </div>
       </a>
       <a class="more-card more-gutters reveal" href="${site.guttersUrl}" target="_blank" rel="noopener" data-track="gutters_click">
         <div class="more-photo">${pic('winter-icicles', 'Icicles hanging from a clogged gutter under heavy snow')}</div>
         <div class="more-copy">
-          <span class="more-brand">UCO Gutters · same team</span>
+          <span class="more-brand">Gutter cleaning · Toronto</span>
           <h2>Icicles on the gutters? <span class="grad-text">That's a clog.</span></h2>
           <p>Gutter cleaning, repair and LeafGuard installation so meltwater drains away instead of freezing into ice dams.</p>
-          <span class="btn btn-ice">See UCO Gutters <span aria-hidden="true">→</span></span>
+          <span class="btn btn-ice">See gutter cleaning <span aria-hidden="true">→</span></span>
         </div>
       </a>
     </div>
   </div>
 </section>`;
 
-const stars = () => `<span class="stars" aria-label="${site.googleRating} out of 5 stars">${icon('star').repeat(5)}</span>`;
-
 const serviceOptions = [
-  'Seasonal plan (driveway)', 'One-time / after-storm clearing', 'Sidewalks, walkways & steps',
-  'Salting & de-icing', 'Roof snow / ice dam removal', 'Commercial lot or plaza', 'Other / not sure',
+  'Driveway clearing', 'Sidewalks, walkways & steps', 'Flat roof, deck or balcony',
+  'Roof snow / ice dam removal', 'Salting & ice removal', 'Windrow at the end of the driveway', 'Commercial lot / snow hauling', 'Other / not sure',
 ];
 
 const propertyOptions = ['1–2 car driveway', '3–4 car driveway', '5+ car / long driveway', 'Townhouse / walkway only', 'Commercial property'];
@@ -83,14 +81,14 @@ const leadForm = () => `
     </form>
     <div class="trust-strip reveal">
       <div class="trust-main">
-        <strong>24/7</strong>
-        <span>crews on the road in every storm across <b>Toronto &amp; the GTA</b></span>
+        <strong>1 call</strong>
+        <span>and your snow is gone, anywhere in <b>Toronto &amp; the GTA</b></span>
       </div>
       <ul class="trust-list">
         <li>${icon('shield')} Fully insured crews</li>
         <li>${icon('check')} Free estimates</li>
         <li>${icon('clock')} Same-day clearing</li>
-        <li>${icon('star')} ${site.years}+ years in the GTA</li>
+        <li>${icon('camera')} Photos of every job</li>
       </ul>
     </div>
   </div>
@@ -111,13 +109,13 @@ const marquee = () => `
 </section>`;
 
 const faqs = [
-  ['How much does snow removal cost in Toronto?', 'It depends on the size of the driveway, walkways and steps, and whether you want a seasonal plan or a single visit. Send the form with your address or call, and we will give you an exact price, usually the same day.'],
-  ['When do you come to plow?', `On a seasonal plan the crew comes automatically once snowfall reaches ${site.trigger}. In long storms we come back until it stops, then do a final clean-up and salt. You never need to call.`],
-  ['Do you clear the windrow left by the city plow?', 'Yes. The ridge of packed snow at the end of your driveway is cleared on every visit for seasonal clients, and on request for one-time visits.'],
-  ['Can I book just one visit after a big storm?', 'Yes. Call or send the form and we send a crew the same day whenever possible. Seasonal clients are served first during heavy storms, so book early.'],
-  ['Do you remove snow and ice dams from roofs?', 'Yes. We rake snow off sloped roofs, hand-clear flat roofs and garages, knock down dangerous icicles and open channels through ice dams so the water can drain.'],
-  ['Is your salt safe for pets and interlock?', 'We use rock salt by default and pet-friendly, concrete-safe ice melt on request. Just tell us when you book.'],
-  ['Do you serve commercial properties?', 'Yes: parking lots, plazas, condos, townhouse complexes and storefronts, with salting and time-stamped photo logs of every visit.'],
+  ['How much does snow removal cost in Toronto?', 'It depends on how much snow there is and what needs clearing: driveway, walkways, steps or roof. Send the form with your address or call, and we will give you a price before we start.'],
+  ['How fast can you come?', 'Usually the same day you call. During a big storm everyone calls at once, so the sooner you reach us, the sooner we can fit you in.'],
+  ['Do you clear the windrow left by the city plow?', 'Yes. The ridge of heavy, packed snow at the end of your driveway can be cleared on the same visit, just mention it when you call.'],
+  ['Do you clear flat roofs, decks and balconies?', 'Yes. We shovel snow off flat roofs, garage roofs, rooftop decks and balconies by hand, leaving a thin layer so the membrane is not damaged.'],
+  ['Do you remove ice dams and icicles?', 'Yes. We rake snow off sloped roofs, knock down dangerous icicles and open channels through ice dams so the water can drain.'],
+  ['Is your salt safe for pets and interlock?', 'We use rock salt by default and pet-friendly, concrete-safe ice melt on request. Just tell us when you call.'],
+  ['Do you serve commercial properties?', 'Yes: parking lots, plazas, condos, townhouse complexes and storefronts, including salting and hauling the piles away.'],
   ['Which areas do you serve?', `All of Toronto and the GTA: ${cities.slice(0, 13).join(', ')} and more.`],
 ];
 
@@ -140,17 +138,17 @@ const home = () => {
   <div class="hero-bg"><img src="/assets/img/hero-snow.svg" alt="" fetchpriority="high"></div>
   ${snowfall()}
   <div class="container hero-inner">
-    <p class="eyebrow reveal">${icon('snow')} Toronto &amp; GTA · 24/7 in every storm</p>
-    <h1 class="reveal">Snow tonight.<br><span class="grad-text">Clear driveway</span><br>by morning.</h1>
-    <p class="hero-sub reveal">Seasonal plowing plans and same-day snow removal for homes and businesses. Driveways, walkways, steps, salting and roofs, done before you need to leave.</p>
+    <p class="eyebrow reveal">${icon('snow')} Toronto &amp; GTA · same-day snow removal</p>
+    <h1 class="reveal">Snowed in?<br><span class="grad-text">We'll dig</span><br>you out.</h1>
+    <p class="hero-sub reveal">Call or message us after a snowfall and we send a crew the same day. Driveways, walkways, steps, flat roofs, salting and ice removal for homes and businesses.</p>
     <div class="hero-ctas reveal">
       <a class="btn btn-call btn-xl" href="tel:${site.phone.tel}" data-track="phone_click">${icon('phone')}<span><span class="call-word">Call </span>${site.phone.display}</span></a>
       <a class="btn btn-glass btn-xl" href="#quote" data-track="quote_click">Get a free quote</a>
     </div>
     <ul class="hero-trust reveal">
-      <li>${stars()} <strong>${site.googleRating}</strong> on Google</li>
       <li>${icon('shield')} Fully insured</li>
       <li>${icon('truck')} Same-day crews</li>
+      <li>${icon('clock')} Free estimates</li>
     </ul>
   </div>
   ${wave('wave-bottom', 'var(--bg)')}
@@ -174,25 +172,16 @@ ${marquee()}
     </div>
   </div>
 </section>
-<section id="plans" class="install plans" aria-labelledby="plans-title">
-  ${wave('wave-top', 'var(--bg)')}
-  ${snowfall()}
+<section id="work" class="section work" aria-labelledby="work-title">
   <div class="container">
-    <p class="kicker center reveal">Plans for the ${new Date().getFullYear()}–${String(new Date().getFullYear() + 1).slice(2)} season</p>
-    <h2 id="plans-title" class="section-title reveal">Pick how you want <span class="grad-text">winter to go</span></h2>
-    <p class="section-sub reveal">Every property is different, so prices are quoted for your address. Seasonal spots on each route are limited.</p>
-    <div class="plan-grid">
-      ${plans.map((p) => `
-      <article class="plan${p.featured ? ' plan-featured' : ''} reveal">
-        <span class="plan-tag">${esc(p.tag)}</span>
-        <h3>${esc(p.name)}</h3>
-        <p>${esc(p.text)}</p>
-        <ul class="check-list">${p.items.map((i) => `<li>${icon('check')} ${esc(i)}</li>`).join('')}</ul>
-        <a class="btn ${p.featured ? 'btn-call' : 'btn-glass'} btn-block" href="#quote" data-track="quote_click">Get my price</a>
-      </article>`).join('')}
+    <p class="kicker center reveal">Real jobs, real photos</p>
+    <h2 id="work-title" class="section-title reveal">Our work in Toronto</h2>
+    <p class="section-sub reveal">Driveways, walkways and flat roofs we cleared this winter.</p>
+    <div class="work-grid">
+      ${gallery.map((g) => `
+      <figure class="work-item reveal">${pic(g.img, g.alt)}<figcaption>${esc(g.caption)}</figcaption></figure>`).join('')}
     </div>
   </div>
-  ${wave('wave-bottom', 'var(--bg)')}
 </section>
 <section class="section pains" aria-labelledby="pains-title">
   <div class="container">
@@ -208,7 +197,7 @@ ${marquee()}
       </article>`).join('')}
     </div>
     <div class="relief reveal">
-      <p><strong>Good news:</strong> with a seasonal plan you never touch a shovel. We watch the forecast and show up on our own.</p>
+      <p><strong>Good news:</strong> you don't have to touch a shovel. One call and a crew comes out to clear it for you.</p>
       <a class="btn btn-call" href="tel:${site.phone.tel}" data-track="phone_click">${icon('phone')} <span><span class="call-word">Call </span>${site.phone.display}</span></a>
     </div>
   </div>
@@ -216,28 +205,13 @@ ${marquee()}
 <section class="section steps-section" aria-labelledby="how-title">
   <div class="container">
     <p class="kicker center reveal">Simple as 1-2-3-4</p>
-    <h2 id="how-title" class="section-title reveal">Sign up once, forget about snow</h2>
+    <h2 id="how-title" class="section-title reveal">From your call to a clear driveway</h2>
     <ol class="steps">
-      <li class="reveal"><span class="step-icon">${icon('phone')}</span><strong>Call or send the form</strong><span>Tell us your address and what needs clearing.</span></li>
-      <li class="reveal"><span class="step-icon">${icon('check')}</span><strong>Get a fixed price</strong><span>Per visit or for the whole season. No surprises after a big winter.</span></li>
-      <li class="reveal"><span class="step-icon">${icon('snow')}</span><strong>We mark your driveway</strong><span>Markers go in before the first snow so the plow never touches your lawn.</span></li>
-      <li class="reveal"><span class="step-icon">${icon('truck')}</span><strong>It snows, we show up</strong><span>Plowed, shovelled and salted, often before you wake up.</span></li>
+      <li class="reveal"><span class="step-icon">${icon('phone')}</span><strong>Call or send the form</strong><span>Tell us your address and what needs clearing. A photo helps.</span></li>
+      <li class="reveal"><span class="step-icon">${icon('check')}</span><strong>Get a price</strong><span>A clear price before we start, no surprises.</span></li>
+      <li class="reveal"><span class="step-icon">${icon('truck')}</span><strong>We come out</strong><span>Usually the same day: shovelled, scraped and salted.</span></li>
+      <li class="reveal"><span class="step-icon">${icon('camera')}</span><strong>See the result</strong><span>Photos when we are done. Pay when you are happy.</span></li>
     </ol>
-  </div>
-</section>
-<section id="reviews" class="section" aria-labelledby="reviews-title">
-  <div class="container">
-    <p class="kicker center reveal">${stars()} ${site.googleRating} on Google</p>
-    <h2 id="reviews-title" class="section-title reveal">Neighbours who stopped shovelling</h2>
-    <p class="section-sub reveal"><a href="${site.googleReviewsUrl}" target="_blank" rel="noopener">Read all our reviews on Google →</a></p>
-    <div class="reviews-grid">
-      ${reviews.map((r) => `
-      <blockquote class="review reveal">
-        <span class="quote-mark" aria-hidden="true">“</span>
-        <p>${esc(r.text)}</p>
-        <footer>${stars()}<span><span class="g-badge" aria-hidden="true">G</span> ${esc(r.name)} · ${esc(r.date)}</span></footer>
-      </blockquote>`).join('')}
-    </div>
   </div>
 </section>
 ${moreSection()}
@@ -252,8 +226,8 @@ ${moreSection()}
   ${snowfall()}
   <div class="container">
     <span class="final-drop" aria-hidden="true">${icon('snow')}</span>
-    <h2 class="reveal">The next storm is already on the forecast.</h2>
-    <p class="reveal">Lock in your spot on our route before the first big snowfall. Free quote, no obligation. ${esc(site.area)}.</p>
+    <h2 class="reveal">Snowed in right now?</h2>
+    <p class="reveal">Call or message us and we'll send a crew. Free quote, no obligation. ${esc(site.area)}.</p>
     <div class="hero-ctas center reveal">
       <a class="btn btn-call btn-xl" href="tel:${site.phone.tel}" data-track="phone_click">${icon('phone')}<span><span class="call-word">Call </span>${site.phone.display}</span></a>
       <a class="btn btn-glass btn-xl" href="#quote" data-track="quote_click">Get a free quote</a>
@@ -270,8 +244,8 @@ ${moreSection()}
 
   return page({
     path: '/',
-    title: `Snow Removal Toronto | Seasonal Plowing, Salting, Roof Snow | ${site.brand}`,
-    description: `Residential and commercial snow removal in Toronto & the GTA: seasonal plowing plans, same-day clearing, salting, windrows and roof snow. Free quotes. Call ${site.phone.display}.`,
+    title: `Snow Removal Toronto | Driveways, Walkways, Roofs, Salting | ${site.brand}`,
+    description: `Same-day snow removal in Toronto & the GTA: driveways, walkways, steps, flat roofs, salting, ice and windrows. Free quotes. Call ${site.phone.display}.`,
     body,
     schema: [faqSchema],
   });
@@ -281,7 +255,7 @@ const guidesIndex = () =>
   page({
     path: '/guides/',
     title: `Snow Removal Guides & How-To | ${site.brand}`,
-    description: 'Practical winter advice for Toronto homeowners: seasonal plans, ice dams, salt and sidewalk rules.',
+    description: 'Practical winter advice for Toronto homeowners: driveways, ice dams, salt and sidewalk rules.',
     body: `
 <section class="section article-head">
   <div class="container narrow">
@@ -301,7 +275,7 @@ const guidePage = (g) =>
     description: g.description,
     schema: [{
       '@context': 'https://schema.org', '@type': 'Article', headline: g.title, description: g.description,
-      publisher: { '@type': 'Organization', name: site.company },
+      publisher: { '@type': 'Organization', name: site.brand },
     }],
     body: `
 <article class="section article">
@@ -311,7 +285,7 @@ const guidePage = (g) =>
     ${g.body}
     <aside class="article-cta">
       <h2>Need help with the snow?</h2>
-      <p>Free quote in Toronto &amp; the GTA. Seasonal plans and same-day clearing.</p>
+      <p>Free quote in Toronto &amp; the GTA. Same-day clearing after you call.</p>
       <div class="hero-ctas">
         <a class="btn btn-primary" href="/#quote" data-track="quote_click">Get a free quote</a>
         <a class="btn btn-outline" href="tel:${site.phone.tel}" data-track="phone_click">${icon('phone')} ${site.phone.display}</a>
@@ -333,7 +307,7 @@ const thankYou = () =>
   <div class="container narrow center">
     <span class="thanks-icon">${icon('check')}</span>
     <h1>Thank you! Your request is in.</h1>
-    <p>We will call you back shortly (${esc(site.hours)}). Need us sooner?</p>
+    <p>We will call you back shortly. Need us sooner?</p>
     <a class="btn btn-primary btn-lg" href="tel:${site.phone.tel}" data-track="phone_click">${icon('phone')} <span><span class="call-word">Call </span>${site.phone.display}</span></a>
     <p class="muted">While you wait: <a href="/guides/">read our winter guides</a>.</p>
   </div>
@@ -346,12 +320,12 @@ const privacy = () =>
   page({
     path: '/privacy/',
     title: `Privacy Policy | ${site.brand}`,
-    description: `How ${site.company} handles information you send through this website.`,
+    description: `How ${site.brand} handles information you send through this website.`,
     body: `
 <article class="section article">
   <div class="container narrow">
     <h1>Privacy policy</h1>
-    <p>This website is operated by ${esc(site.company)}. We respect your privacy and handle personal information in line with Canada's Personal Information Protection and Electronic Documents Act (PIPEDA).</p>
+    <p>This website is operated by ${esc(site.brand)}. We respect your privacy and handle personal information in line with Canada's Personal Information Protection and Electronic Documents Act (PIPEDA).</p>
     <h2>What we collect</h2>
     <p>When you request a quote we collect the details you enter: name, phone number, address, email (optional), city, property size, the service you need and your message. We also record the advertising campaign that brought you to the site (for example a Google Ads click ID) so we can measure which ads work.</p>
     <h2>How we use it</h2>
@@ -359,7 +333,7 @@ const privacy = () =>
     <h2>Cookies and analytics</h2>
     <p>We use Google Tag Manager, Google Analytics and Google Ads conversion tracking, which may set cookies to measure visits and ad performance. You can block cookies in your browser settings or opt out of personalised ads at <a href="https://adssettings.google.com" rel="noopener">adssettings.google.com</a>.</p>
     <h2>Contact</h2>
-    <p>To access or delete your information, email <a href="mailto:${site.email}">${site.email}</a> or call <a href="tel:${site.phone.tel}">${site.phone.display}</a>.</p>
+    <p>To access or delete your information, call <a href="tel:${site.phone.tel}">${site.phone.display}</a> or message us on <a href="https://wa.me/${site.whatsapp}" rel="noopener">WhatsApp</a>.</p>
   </div>
 </article>`,
   });
@@ -367,8 +341,8 @@ const privacy = () =>
 const lightsPage = () =>
   page({
     path: '/lights/',
-    title: `Permanent holiday lights in Toronto | UCO Lights`,
-    description: 'The UCO team also installs permanent LED holiday lights across Toronto & the GTA. Visit UCO Lights to learn more.',
+    title: `Permanent holiday lights in Toronto`,
+    description: 'Permanent LED holiday lights installed across Toronto & the GTA.',
     body: `
 <style>.sticky-cta, .fab-lights { display: none; } .fab-call { bottom: calc(16px + env(safe-area-inset-bottom)); } body { padding-bottom: 0; }</style>
 <section class="section lights-page">
@@ -384,7 +358,7 @@ const lightsPage = () =>
         <li>${icon('check')} No more ladders every November and January</li>
         <li>${icon('check')} Most homes done in one day</li>
       </ul>
-      <a class="btn btn-lights btn-xl" href="${site.lightsUrl}" data-track="lights_click">Visit UCO Lights to learn more <span aria-hidden="true">→</span></a>
+      <a class="btn btn-lights btn-xl" href="${site.lightsUrl}" data-track="lights_click">Learn more about permanent lights <span aria-hidden="true">→</span></a>
       <p class="muted"><a href="/">← Back to snow removal</a></p>
     </div>
   </div>
@@ -394,7 +368,7 @@ const lightsPage = () =>
       <figure><div class="lights-ba-img"><span class="ba-tag">Before</span><span class="ba-tag ba-tag-after">After</span>${pic('lights-ba-1', 'Two-storey home: by day on the left, permanent lights on at night on the right')}</div><figcaption>Two-storey with garage</figcaption></figure>
       <figure><div class="lights-ba-img"><span class="ba-tag">Before</span><span class="ba-tag ba-tag-after">After</span>${pic('lights-ba-3', 'Home with dormers: by day on the left, permanent lights on at night on the right')}</div><figcaption>Dormers and gables</figcaption></figure>
     </div>
-    <a class="btn btn-lights btn-lg" href="${site.lightsUrl}" data-track="lights_click">See more on UCO Lights <span aria-hidden="true">→</span></a>
+    <a class="btn btn-lights btn-lg" href="${site.lightsUrl}" data-track="lights_click">See more permanent lights <span aria-hidden="true">→</span></a>
   </div>
 </section>`,
   });

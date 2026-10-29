@@ -1,38 +1,5 @@
 // Articles shown under "Guides & how-to" in the menu. `body` is HTML.
-import { site } from './config.mjs';
-
 export const guides = [
-  {
-    slug: 'seasonal-plan-vs-per-visit',
-    short: 'Seasonal plan or per visit?',
-    title: 'Seasonal Snow Removal Plan vs. Per-Visit: Which Is Cheaper in Toronto?',
-    description: 'How seasonal snow plowing plans work in Toronto and the GTA, and when paying per visit makes more sense.',
-    body: `
-<p>Toronto gets around <strong>120 cm of snow in an average winter</strong>, spread over a few dozen snowfalls. Some winters bring a handful of big storms, others a steady stream of small ones. How you pay for snow removal decides who carries that risk: you or the snow removal company.</p>
-<h2>How a seasonal plan works</h2>
-<ul>
-  <li>One fixed price for the season (ours runs ${site.season}), usually paid in one or two instalments.</li>
-  <li>The crew comes automatically every time snowfall reaches the <strong>trigger depth</strong> (${site.trigger} for most of our clients). You never have to call.</li>
-  <li>Driveway, walkway and steps are included. Salting and the windrow at the end of the driveway are usually included or a small add-on.</li>
-  <li>A heavy winter costs you nothing extra. A mild winter costs the same.</li>
-</ul>
-<h2>When per-visit makes sense</h2>
-<ul>
-  <li>You are away for part of the winter or only need help in big storms.</li>
-  <li>You usually shovel yourself but want a backup after a major dump of snow.</li>
-  <li>The property is small, for example a short single-car driveway.</li>
-</ul>
-<h2>The quick rule</h2>
-<p>If you would call a crew more than six or seven times in a typical winter, a seasonal plan is almost always cheaper, and you get priority on the route. If you only want help with the biggest storms, pay per visit.</p>
-<h2>What to ask any snow removal company</h2>
-<ol>
-  <li>What is the trigger depth, and do you come back if it keeps snowing?</li>
-  <li>Is the city windrow at the end of the driveway included?</li>
-  <li>Is salting included, and is pet-friendly ice melt available?</li>
-  <li>Are you insured if a plow damages the lawn, curb or garage door?</li>
-</ol>
-<p>Not sure which option fits your home? Send us your address and we will quote both.</p>`,
-  },
   {
     slug: 'prepare-driveway-for-snow',
     short: 'Get your driveway ready for winter',
@@ -41,7 +8,7 @@ export const guides = [
     body: `
 <p>The first real snowfall in Toronto usually comes in late November or early December. A few minutes of preparation in the fall saves your lawn, your interlock and your garage door.</p>
 <h2>1. Put up driveway markers</h2>
-<p>Tall orange or reflective stakes along both edges of the driveway show the plow exactly where the pavement ends. Without them, the blade can tear up sod, garden edging and sprinkler heads hidden under the snow. We install markers for every seasonal client.</p>
+<p>Tall orange or reflective stakes along both edges of the driveway show the plow exactly where the pavement ends. Without them, the blade can tear up sod, garden edging and sprinkler heads hidden under the snow.</p>
 <h2>2. Clear the driveway of obstacles</h2>
 <p>Garden hoses, planters, kids' toys and loose stones all disappear under the first snow. Anything left on the driveway can damage the plow or get thrown into the snowbank.</p>
 <h2>3. Check for cracks and loose interlock</h2>
@@ -124,7 +91,7 @@ export const guides = [
   <li>Keeping fire hydrants and catch basins near your home clear helps everyone.</li>
 </ul>
 <h2>Check your city</h2>
-<p>Mississauga, Brampton, Vaughan, Markham, Richmond Hill, Oakville and Durham Region each have their own bylaw on sidewalk clearing, deadlines and fines. Search for "sidewalk snow clearing bylaw" on your city's website, or ask us: we know the rules on our routes.</p>
+<p>Mississauga, Brampton, Vaughan, Markham, Richmond Hill, Oakville and Durham Region each have their own bylaw on sidewalk clearing, deadlines and fines. Search for "sidewalk snow clearing bylaw" on your city's website, or ask us when you call.</p>
 <h2>Liability</h2>
 <p>If someone slips on an uncleared or icy walkway on your property, you may be responsible. Regular clearing and salting, plus a crew that logs each visit, is the best protection. For commercial clients we keep time-stamped photos of every visit.</p>`,
   },
