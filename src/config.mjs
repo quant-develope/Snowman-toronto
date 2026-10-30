@@ -2,10 +2,10 @@
 export const site = {
   brand: 'Snowman Toronto',
   // Production URL, used for canonical links, sitemap and structured data.
-  url: 'https://snowman-toronto.unknwn-creation.workers.dev',
-  phone: { display: '(437) 535-2069', tel: '+14375352069' },
+  url: 'https://snowman-toronto.com',
+  phone: { display: '(365) 360-8470', tel: '+13653608470' },
   // WhatsApp chat for the green floating button (international format, digits only).
-  whatsapp: '14375352069',
+  whatsapp: '13653608470',
   // Sister sites promoted in "You may be interested" and the garland button.
   lightsUrl: 'https://lights-toronto.unknwn-creation.workers.dev/',
   guttersUrl: 'https://gutters-toronto.unknwn-creation.workers.dev/',
@@ -14,6 +14,8 @@ export const site = {
   // Google Tag Manager container ID, e.g. 'GTM-XXXXXXX'. Empty = no GTM.
   // Conversions are pushed to dataLayer: generate_lead, phone_click, quote_click.
   gtmId: '',
+  // Google Ads tag (gtag.js) on every page. Empty = no tag.
+  googleAdsId: 'AW-18546085051',
 };
 
 export const services = [
