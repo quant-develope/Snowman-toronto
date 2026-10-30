@@ -122,13 +122,6 @@ const faqs = [
 const wave = (cls, fill) =>
   `<svg class="wave ${cls}" viewBox="0 0 1440 120" preserveAspectRatio="none" aria-hidden="true"><path fill="${fill}" d="M0 64c120 32 240 48 360 40S600 56 720 40s240-24 360 0 240 56 360 56V120H0z"/></svg>`;
 
-const pains = [
-  ['warn', 'Slips and lawsuits', 'An icy walkway is the most common winter injury. If someone falls on your property, you may be held responsible.'],
-  ['clock', 'Late for work', 'The city plow buries the end of your driveway in heavy, packed snow at 5 am. You are digging out instead of driving.'],
-  ['house', 'Ice dams & roof leaks', 'Snow left on the roof melts and refreezes at the eaves. Water backs up under the shingles and into your ceiling.'],
-  ['shovel', 'Back injuries', 'Wet Toronto snow can weigh more than 20 kg per shovelful. Every winter, emergency rooms fill up with shovelling injuries.'],
-];
-
 // Animated snowfall layer (pure CSS, see .snow in main.css).
 const snowfall = () => `<div class="snow" aria-hidden="true">${'<i></i>'.repeat(36)}</div>`;
 
@@ -180,26 +173,7 @@ ${marquee()}
     <p class="section-sub reveal">Driveways, walkways and flat roofs we cleared this winter.</p>
     <div class="work-grid">
       ${gallery.map((g) => `
-      <figure class="work-item reveal">${pic(g.img, g.alt)}<figcaption>${esc(g.caption)}</figcaption></figure>`).join('')}
-    </div>
-  </div>
-</section>
-<section class="section pains" aria-labelledby="pains-title">
-  <div class="container">
-    <p class="kicker center reveal">Why let us do it</p>
-    <h2 id="pains-title" class="section-title reveal">Snow is never <em>just</em> snow</h2>
-    <p class="section-sub reveal">Toronto gets over a metre of snow in an average winter, and most of it is heavy, wet and followed by a freeze.</p>
-    <div class="pain-grid">
-      ${pains.map(([i, t, d]) => `
-      <article class="pain-card reveal">
-        <span class="pain-icon">${icon(i)}</span>
-        <h3>${t}</h3>
-        <p>${d}</p>
-      </article>`).join('')}
-    </div>
-    <div class="relief reveal">
-      <p><strong>Good news:</strong> you don't have to touch a shovel. One call and a crew comes out to clear it for you.</p>
-      <a class="btn btn-call" href="tel:${site.phone.tel}" data-track="phone_click">${icon('phone')} <span><span class="call-word">Call </span>${site.phone.display}</span></a>
+      <figure class="work-item reveal">${pic(g.img, g.alt)}</figure>`).join('')}
     </div>
   </div>
 </section>
