@@ -95,12 +95,12 @@ export const partners = [
 // Photos from real jobs in Toronto. Images live in public/assets/img/work/
 // as .jpg + .webp with the same name; pass the name without extension.
 export const gallery = [
+  { img: 'job-garage-drive', caption: 'Garage driveway opened up', alt: 'Driveway to a double garage cleared between snowbanks at dusk' },
+  { img: 'job-side-walk', caption: 'Side path dug out', alt: 'Walk beside a parked car shovelled out along a snowy front yard at night' },
+  { img: 'job-stone-house', caption: 'Stone house drive cleared', alt: 'Wide driveway of a stone house in Toronto cleared after a heavy snowfall' },
   { img: 'job-driveway', caption: 'Driveway cleared and de-iced', alt: 'Long driveway beside a brick house cleared of snow and ice' },
+  { img: 'job-bungalow', caption: 'Bungalow drive on a snowy street', alt: 'Driveway of a small Toronto bungalow with a car parked after the street was plowed' },
   { img: 'job-walkway', caption: 'Front walk shovelled to the pavement', alt: 'Front walkway to a Toronto brick house shovelled clear between snowbanks' },
-  { img: 'job-flat-roof', caption: 'Flat roof cleared', alt: 'Flat roof cleared of heavy snow behind Toronto houses at night' },
-  { img: 'job-roof-deck', caption: 'Rooftop deck cleared', alt: 'Rooftop deck outside a door cleared of snow at night' },
-  { img: 'job-roof-ledge', caption: 'Roof edge cleared by hand', alt: 'Narrow flat roof along a brick wall cleared with a snow shovel' },
-  { img: 'winter-icicles', caption: 'Icicles and ice on the eaves', alt: 'Icicles hanging from a gutter under heavy snow' },
 ];
 
 // Before / after pairs from real jobs. Files live in public/assets/img/work/
