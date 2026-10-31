@@ -37,35 +37,43 @@
     if (el) dl.push({ event: el.getAttribute('data-track'), link_location: el.className || 'link' });
   });
 
-  // After a tap on a phone number, open the "You may be interested" page once the
-  // visitor comes back from the dialer. The call itself only ever starts from the
-  // visitor's own tap: the page never navigates while the dialer or the iOS "Call?"
-  // prompt is opening, which is what makes iOS show "site blocked automatic call
-  // initiation". Phones get no timer, and a short trip to the background (under
-  // 2 s, e.g. the prompt itself) does not count as a call. On desktop, where tel:
-  // links usually stay on the page, move on after a moment.
-  var NEXT = '/you-may-be-interested/';
-  var calling = false;
-  if (location.pathname !== NEXT) {
+  // After a tap on a call button, move this tab to the "You may be interested" page.
+  // The tab never navigates while the dialer or the iOS "Call?" prompt is opening (iOS
+  // reports that as "site blocked automatic call initiation"): it waits until the
+  // visitor is back on the page and it has stayed on screen for a moment. The tap is
+  // also remembered in sessionStorage, so the page still opens if the browser reloaded
+  // the tab while the visitor was on the call. Where nothing leaves the page (desktop
+  // without a phone app), it moves on after a short pause.
+  var NEXT = '/you-may-be-interested/', KEY = 'callTapAt';
+  var onNext = location.pathname === NEXT;
+  var tapped = false, left = false, timer = 0;
+  var markCall = function (v) { try { v ? sessionStorage.setItem(KEY, String(Date.now())) : sessionStorage.removeItem(KEY); } catch (err) {} };
+  var go = function () {
+    clearTimeout(timer);
+    if (!tapped || document.hidden) return;
+    tapped = false;
+    markCall(false);
+    location.href = NEXT;
+  };
+  var away = function () { if (tapped) { left = true; clearTimeout(timer); } };
+  var back = function () { if (tapped && left && !document.hidden) { clearTimeout(timer); timer = setTimeout(go, 1200); } };
+  if (onNext) markCall(false);
+  else {
     document.addEventListener('click', function (e) {
-      var a = e.target.closest('a[href^="tel:"]');
-      if (!a || calling) return;
-      calling = true;
-      var hiddenAt = 0;
-      var onVis = function () {
-        if (document.hidden) { hiddenAt = Date.now(); clearTimeout(timer); }
-        else if (hiddenAt && Date.now() - hiddenAt >= 2000) go();
-        else hiddenAt = 0;
-      };
-      // Runs once, so "Back" from the next page is not bounced forward again.
-      var go = function () {
-        clearTimeout(timer);
-        document.removeEventListener('visibilitychange', onVis);
-        calling = false;
-        location.href = NEXT;
-      };
-      var timer = window.matchMedia('(pointer: fine)').matches ? setTimeout(go, 1500) : 0;
-      document.addEventListener('visibilitychange', onVis);
+      if (!e.target.closest('a[href^="tel:"]')) return;
+      tapped = true; left = false;
+      markCall(true);
+      clearTimeout(timer);
+      timer = setTimeout(function () { if (!left) go(); }, 2500);
+    });
+    document.addEventListener('visibilitychange', function () { document.hidden ? away() : back(); });
+    window.addEventListener('blur', away);
+    window.addEventListener('focus', back);
+    window.addEventListener('pageshow', function () {
+      var at = 0;
+      try { at = +sessionStorage.getItem(KEY) || 0; } catch (err) {}
+      if (at && Date.now() - at < 30 * 60 * 1000) { tapped = true; left = true; back(); }
+      else markCall(false);
     });
   }
 
