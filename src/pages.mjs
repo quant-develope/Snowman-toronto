@@ -360,16 +360,16 @@ const lightsPage = () =>
   page({
     path: '/lights/',
     title: `Permanent holiday lights in Toronto`,
-    description: 'Permanent LED holiday lights installed across Toronto & the GTA.',
+    description: 'Permanent LED holiday lights installed by our partners across Toronto & the GTA.',
     body: `
 <style>.sticky-cta, .fab-lights { display: none; } .fab-call { bottom: calc(16px + env(safe-area-inset-bottom)); } body { padding-bottom: 0; }</style>
 <section class="section lights-page">
   <div class="container lights-inner">
     <div class="lights-photo">${pic('lights-holiday-mix', 'Home outlined with permanent multicolour holiday lights', { eager: true })}</div>
     <div>
-      <p class="kicker">We do this too</p>
-      <h1>Permanent holiday lights, <span class="lights-text">installed by the same crew</span></h1>
-      <p>The team that clears your snow also installs permanent LED lights along the roofline. They mount on the same fascia, stay up all year and are nearly invisible by day.</p>
+      <p class="kicker">By our partners</p>
+      <h1>Permanent holiday lights, <span class="lights-text">by our partners</span></h1>
+      <p>Our partners install permanent LED lights along the roofline. They mount on the fascia, stay up all year and are nearly invisible by day.</p>
       <ul class="check-list">
         <li>${icon('check')} 16 million colours and ready-made holiday scenes</li>
         <li>${icon('check')} Control from your phone, with timers and voice</li>
