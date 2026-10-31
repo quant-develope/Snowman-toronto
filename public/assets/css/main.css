@@ -529,3 +529,12 @@ body.menu-open { overflow: hidden; }
 .interested-top .kicker { margin-bottom: 6px; }
 .interested-call { padding-top: 0; }
 .interested-ctas { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; }
+
+/* Before / after pairs */
+.ba-grid { display: grid; gap: 18px; grid-template-columns: 1fr; }
+.ba-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 4px; overflow: hidden; border-radius: var(--r-md); background: var(--ocean); box-shadow: var(--shadow-sm); }
+.ba-shot { position: relative; margin: 0; overflow: hidden; }
+.ba-shot img { display: block; width: 100%; aspect-ratio: 3 / 4; object-fit: cover; }
+.ba-tag { position: absolute; top: 10px; left: 10px; background: rgba(6,20,43,.78); backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); color: #fff; font-size: .74rem; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; padding: 5px 11px; border-radius: 999px; }
+.ba-tag-after { background: var(--cta); color: var(--deep); }
+@media (min-width: 900px) { .ba-grid { grid-template-columns: repeat(2, 1fr); gap: 22px; } }
